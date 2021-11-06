@@ -1,0 +1,270 @@
+*, *::before, *::after{
+  box-shadow: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: 'Barlow', sans-serif;
+  overflow: hidden;
+  background-color: #393E46;
+}
+
+/* headings, texts, paragraphs */
+h1 {
+  margin: 30px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 5px 0 #232931;
+  font-size: 2rem;
+  color: #4ECCA3;
+}
+
+.container {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Header */
+header{
+  background: rgba(0,0,0,0.1);
+  height: 150px;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+
+.header{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  transition: transform 250ms ease-in;
+}
+
+.header-start{
+  transform: translateX(-100%);
+}
+
+.subheader{
+  width: 100%;
+  max-height: 0px;
+  background: red;
+  display: flex;
+  align-items: center;
+  color: rgba(255,255,255,0.9);
+  font-weight: 900;
+  overflow: hidden;
+  transition: max-height 0s ease-in 800ms;
+}
+
+.subheader-visible{
+  max-height: 60px;
+}
+
+/* Main */
+main{
+  /*position: relative;*/
+  height: calc(100vh - 205px);
+  transition: transform 250ms ease-in;
+  transform: translateX(-100%);
+  overflow-y: hidden;
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.main-overflow{
+  overflow-y: auto;
+}
+
+.dice {
+  text-align: center;
+  display: inline-block;
+  margin: 0 2rem;
+}
+
+
+form label, .dice p{
+  font-size: 1.5rem;
+  color: #4ECCA3;
+  font-family: 'Indie Flower', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100px;
+  margin: 1rem;
+  transition: transform 1000ms ease-in;
+}
+
+footer {
+  position: absolute;
+  height: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #EEEEEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+
+}
+
+.buttons{
+  /*margin-top: 3rem;*/
+  /*display: none;*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons > *{
+  flex: 1 1 33.333%;
+}
+
+.buttons span:first-of-type{
+  text-align: left;
+}
+
+.buttons span:last-of-type{
+  text-align: right;
+}
+
+.btn, .btn2, .btn3{
+  max-width: 400px;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border: none;
+  background: #4ECCA3;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background 250ms ease-in;
+}
+
+.btn-start{
+  background: #ffd131;
+}
+
+.btn2:hover, .btn3:hover{
+  background: #60e0b6;
+}
+
+.btn-shake-animation{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+
+.btn-start:hover{
+   background: #ffdd68;
+}
+
+form{
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  /*align-items: center;*/
+}
+
+.form-inputs{
+  display: flex;
+}
+
+.input-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*align-items: center;*/
+}
+
+.input-wrapper span{
+  display: flex;
+  height: 50px;
+}
+
+.input-wrapper input{
+  width: 100px;
+  border: 0;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 2rem;
+  transition: box-shadow 100ms ease-in;
+}
+
+
+.input-wrapper input:focus{
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 0px 3px #4ECCA3;
+  -moz-box-shadow: inset 0px 0px 0px 3px #4ECCA3;
+  box-shadow: inset 0px 0px 0px 3px #4ECCA3;
+}
+
+.input-wrapper p{
+  flex: 1 1 50%;
+  color: rgba(255,255,255,0.8);
+  padding: 0 1rem;
+}
+
+.display-none{
+  display: none;
+}
+
+.display-block{
+  display: block;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.translateX100{
+  transform: translateX(100%);
+}
+
+.translateX100-negative{
+  transform: translateX(-100%);
+}
+
+.translateX0{
+  transform: translateX(0%);
+}
+
+.img-transform{
+  transform: rotate(3600deg);
+}
+
+.dice p.winner, .winner{
+  color: #ffd131;
+}
